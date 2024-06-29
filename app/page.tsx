@@ -5,10 +5,10 @@ import React from "react";
 import logo from "@/public/logo.svg";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-const { userId } = auth();
-if (userId) redirect("/notes");
 
 const HomePage = () => {
+  const { userId } = auth();
+  if (userId) redirect("/notes");
   return (
     <>
       <main className="flex flex-col h-screen items-center justify-center gap-5">
